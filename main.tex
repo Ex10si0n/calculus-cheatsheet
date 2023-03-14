@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\geometry{left=1cm, right=1cm, top=1cm, bottom=2cm}
+
+\begin{document}
+\begin{multicols*}{2}
+
+    \subsection*{Limit Laws}
+    \begin{align*}
+        \lim_{x \to c} f(x) \pm g(x) &= \lim_{x \to c} f(x) \pm \lim_{x \to c} g(x) \\
+        \lim_{x \to c} f(x) \cdot g(x) &= \lim_{x \to c} f(x) \cdot \lim_{x \to c} g(x) \\
+        \lim_{x \to c} \frac{f(x)}{g(x)} &= \frac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)} \\
+        \lim_{x \to c} (f(x))^n &= (\lim_{x \to c} f(x))^n
+    \end{align*}
+
+    \subsection*{One Sided Limits}
+    \begin{align*}
+        x \rightarrow c: \lim_{x \to c^-} f(x) \\
+        c \leftarrow x: \lim_{x \to c^+} f(x) \\
+    \end{align*}
+
+    \subsection*{L'Hospital's Rule}
+    if $\frac{f(x)}{g(x)} = \frac{0}{0} \text{or} \frac{\infty}{\infty}$, then
+    \begin{align*}
+        \lim_{x \to c} \frac{f(x)}{g(x)} &= \lim_{x \to c} \frac{f'(x)}{g'(x)}
+    \end{align*}
+
+    \subsection*{Derivative Rules}
+    \begin{align*}
+        \text{Constant Rule} &\quad \frac{d}{dx} c \cdot f(x) = c \cdot f'(x) \\
+        \text{Power Rule} &\quad \frac{d}{dx} x^n = nx^{n-1} \\
+        \text{Sum Rule} &\quad \frac{d}{dx} (f+g) = \frac{d}{dx} f + \frac{d}{dx} g \\
+        \text{Product Rule} &\quad \frac{d}{dx} (f \cdot g) = \frac{d}{dx} f \cdot g + f \cdot \frac{d}{dx} g \\
+        \text{Quotient Rule} &\quad \frac{d}{dx} \frac{f}{g} = \frac{\frac{d}{dx} f \cdot g - f \cdot \frac{d}{dx} g}{g^2} \\
+        \text{Chain Rule} &\quad \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \\
+        \text{Inverse} &\quad (\frac{dy}{dx})^{-1} = \frac{dx}{dy} \\
+    \end{align*}
+
+    \subsection*{Derivatives of Polynomials}
+    \begin{align*}
+        \frac{d}{dx} c &= 0 \\
+        \frac{d}{dx} x^n &= nx^{n-1} \\
+    \end{align*}
+
+    \subsection*{Derivatives of Trig Functions}
+    \begin{align*}
+        \frac{d}{dx} \sin(x) &= \cos(x) \\
+        \frac{d}{dx} \cos(x) &= -\sin(x) \\
+        \frac{d}{dx} \tan(x) &= \sec^2(x) \\
+        \frac{d}{dx} \cot(x) &= -\csc^2(x) \\
+        \frac{d}{dx} \sec(x) &= \sec(x) \tan(x) \\
+        \frac{d}{dx} \csc(x) &= -\csc(x) \cot(x) \\
+    \end{align*}
+
+    \subsection*{Derivatives of Inverse Trig Functions}
+    \begin{align*}
+        \frac{d}{dx} \sin^{-1}(x) &= \frac{1}{\sqrt{1-x^2}} \\
+        \frac{d}{dx} \cos^{-1}(x) &= -\frac{1}{\sqrt{1-x^2}} \\
+        \frac{d}{dx} \tan^{-1}(x) &= \frac{1}{1+x^2} \\
+        \frac{d}{dx} \cot^{-1}(x) &= -\frac{1}{1+x^2} \\
+    \end{align*}
+
+    \subsection*{Derivatives of Transcendental Functions}
+    \begin{align*}
+        \frac{d}{dx} a^x &= a^x \ln(a) \\
+        \frac{d}{dx} e^x &= e^x \\
+        \frac{d}{dx} \ln(x) &= \frac{1}{x} \\
+        \frac{d}{dx} \log_a(x) &= \frac{1}{x \ln(a)} \\
+        \frac{d}{dx} f^g &= \frac{d}{dx} e^{g \ln(f)}
+    \end{align*}
+
+    \subsection*{Derivatives of Implicit Functions}
+    Find $\frac{dy}{dx}$ of $x^3+y^3-9xy=0$
+    \begin{align*}
+        \frac{d}{dx} (x^3 + y^3 - 9xy) &= 0 \\
+        \frac{d}{dx} x^3 + \frac{d}{dx} y^3 - 9 \frac{d}{dx} (xy) &= 0 \\
+        3x^2 + \frac{d}{dy} y^3 \frac{dy}{dx} - 9 (\frac{d}{dx} x \cdot y + x \frac{d}{dx} y) &= 0 \\
+        3x^2 + 3y^2 \frac{dy}{dx} - 9 (y + x \frac{dy}{dx}) &= 0 \\
+        \frac{dy}{dx} = \frac{-x^2+3y}{-3x+y^2}
+    \end{align*}
+
+    \subsection*{Multiple Derivative}
+    \begin{align*}
+        \frac{d^k}{dx^k} x^n &= \frac{n!}{(n-k)!}x^{n-k} \\
+        \frac{d^k}{dx^k} e^{\lambda x} &= \lambda^k e^{\lambda x} \\
+        \frac{d^k}{dx^k} a^x &= (\ln(a))^k a^x \\
+    \end{align*}
+
+    \subsection*{Newton's Method}
+    To find the root of $f(x) = 0$ using Newton's Method, start with an initial guess $x_0$ and then iterate
+    \begin{align*}
+        x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)} \\
+    \end{align*}
+    \begin{tikzpicture}
+        \begin{axis}[axis lines = left, xlabel = \(x\), ylabel = {\(f(x)\)}]
+            \addplot [domain=0:5, samples=100, color=blue]{2^x};
+            \addplot [mark=*, mark options={color=red}] coordinates {(4,16)};
+            \addplot[mark=none, red] coordinates {(2.6, 0) (5, 27.09)};
+            \addplot[dashed, red] coordinates {(4, 16) (4, 0)};
+            \addplot [mark=*, mark options={color=red}] coordinates {(4, 0)};
+            \addplot [mark=*, mark options={color=red}] coordinates {(2.6, 0)};
+        \end{axis}
+    \end{tikzpicture}
+
+    \subsection*{Exponential Substitution}
+    To find the derivative of $y = x^{\ln x}$, use exponential substitution due to $x = e^{\ln x}$, then $x^{\ln x} = e^{(\ln x)^2}$
+    \begin{align*}
+        y &= x^{\ln x} \\
+        \frac{dy}{dx} &= \frac{d}{dx} e^{(\ln x)^2} \\
+        &= \frac{d}{du} e^u \frac{d}{dx} (\ln x)^2 \\
+        &= \frac{d}{du} e^u \frac{d}{dv} v^2 \frac{d}{dx} \ln x \\
+        &= e^u \cdot 2v \cdot \frac{1}{x} \\
+        &= x^{\ln x} \cdot 2\ln^2 x \cdot \frac{1}{x} \\
+    \end{align*}
+
+    \subsection*{Implicit Differentiation using Exponential Substitution}
+    To find the derivative of $x = y^{xy}$, use exponential substitution due to $y = e^{\ln y}$, then $y^{xy} = e^{xy\ln y}$
+    \begin{align*}
+        x &= y^{xy} \\
+        x &= e^{xy\ln y} \\
+        \frac{d}{dx} x &= \frac{d}{dx} e^{xy\ln y} \\
+        1 &= \frac{d}{du} e^u \frac{d}{dx} xy \ln y \\
+        1 &= e^u (y\ln y + x \cdot \frac{d}{dx} y \ln y) \\
+        1 &= x (y\ln y + x \cdot \frac{d}{dy} y \ln y \frac{dy}{dx}) \\
+        1 &= xy\ln y + x^2(\ln y+1)\frac{dy}{dx} \\
+        \frac{dy}{dx} &= \frac{1-xy\ln y}{x^2(\ln y+1)} \\
+    \end{align*}
+
+    \subsection*{Derivative of Inverse Trigonometric Functions}
+    To find the derivative of $\theta = \sin^{-1}(x)$, we have $x = \sin \theta$, since $\sin^2 \theta + \cos^2 \theta = 1$
+    \begin{align*}
+        x &= \sin \theta \\
+        \frac{dx}{d\theta} &= \cos \theta \\
+        \frac{d\theta}{dx} &= \frac{1}{\cos \theta} \\
+        \frac{d\theta}{dx} &= \frac{1}{\sqrt{1-\sin^2 \theta}} \\
+        \frac{d\theta}{dx} &= \frac{1}{\sqrt{1-x^2}} \\
+    \end{align*}
+
+    \subsection*{Series}
+    $f^{(k)}(x)$ is the $k$th derivative of $f(x)$
+    \begin{align*}
+        \text{Taylor Series} \quad f(x) &= \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k \\
+        \text{Maclaurin Series} \quad f(x) &= \sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!} x^k \\
+    \end{align*}
+
+\end{multicols*}
+\end{document}
